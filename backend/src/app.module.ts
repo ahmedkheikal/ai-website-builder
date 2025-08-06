@@ -10,7 +10,7 @@ import { SectionsModule } from './sections/sections.module';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    MongooseModule.forRoot('mongodb://localhost:27017/website-sections'),
+    MongooseModule.forRoot(process.env.MONGO_URI || 'mongodb://localhost:27017/website-sections'),
     SectionsModule,
   ],
   controllers: [AppController],
